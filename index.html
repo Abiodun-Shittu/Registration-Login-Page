@@ -5,10 +5,47 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 	<title>Registration Page</title>
 </head>
 <body>
-	
+	<div class="container">
+		<img src="./img/Abstraction.png" alt="Abstraction">
+		<div class="content">
+			<div class="header">
+				<p>DrkGaphar</p>
+			</div>
+			<h3>Keep track of your daily activities here</h3>
+		</div>
+		<div class="form">
+			<h1>Create your Account</h1>
+			<p>You need an account to get started</p>
+			<form action="">
+				<div class="input">
+					<input type="text" name="name" id="name" placeholder="Input Name" required>
+					<i class="uil uil-user"></i>
+				</div>
+				<div class="input">
+					<input type="email" name="email" id="email" placeholder="Input Email" required>
+					<i class="uil uil-envelope icon"></i>
+				</div>
+				<div class="input">
+					<input type="password" name="password" id="password" placeholder="Input Password" required>
+					<i class="uil uil-lock icon"></i>
+					<i class="uil uil-eye-slash showHidePass"></i>
+				</div>
+				<div class="input">
+					<input type="password" name="password" id="password" placeholder="Confirm Password" required>
+					<i class="uil uil-lock icon"></i>
+					<i class="uil uil-eye-slash showHidePass"></i>
+				</div>
+				<div class="input button">
+					<input type="button" value="Create Account">
+				</div>
+				<p class="text">Already registered? <span><a href="./loginPage.html">Log in</a></span></p>
+			</form>
+		</div>
+	</div>
 	
 	<script src="./js/main.js"></script>
 </body>
