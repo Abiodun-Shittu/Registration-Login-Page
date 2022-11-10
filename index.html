@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-	<title>Registration Page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPlan</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./assets/svg/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-	<div class="container">
-		<img src="./img/Abstraction.png" alt="Abstraction">
-		<div class="content">
-			<div class="header">
-				<p>DrkGaphar</p>
-			</div>
-			<h3>Keep track of your daily activities here</h3>
-		</div>
-		<div class="form">
-			<h1>Create your Account</h1>
-			<p>You need an account to get started</p>
-			<form action="">
-				<div class="input">
-					<input type="text" name="name" id="name" placeholder="Input Name" required>
-					<i class="uil uil-user"></i>
-				</div>
-				<div class="input">
-					<input type="email" name="email" id="email" placeholder="Input Email" required>
-					<i class="uil uil-envelope icon"></i>
-				</div>
-				<div class="input">
-					<input type="password" name="password" id="password" placeholder="Input Password" required>
-					<i class="uil uil-lock icon"></i>
-					<i class="uil uil-eye-slash showHidePass"></i>
-				</div>
-				<div class="input">
-					<input type="password" name="password" id="password" placeholder="Confirm Password" required>
-					<i class="uil uil-lock icon"></i>
-					<i class="uil uil-eye-slash showHidePass"></i>
-				</div>
-				<div class="input button">
-					<input type="button" value="Create Account">
-				</div>
-				<p class="text">Already registered? <span><a href="./loginPage.html">Log in</a></span></p>
-			</form>
-		</div>
-	</div>
-	
-	<script src="./js/main.js"></script>
+    <header class="header">
+        <div>
+            <img src="./assets/svg/iplanlogo.svg" alt="logo" />
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="left">
+            <h1>With iPlan You Are Good To Go For The Day!</h1>
+            <p>Here we help you prioritize, organize and keep track of your daily activities.
+                Feel organized and focused about your day with iPlan!
+            </p>
+        </section>
+
+        <section class="right">
+            <img src="./assets/images/hero1.png" alt="hero pic 1" />
+        </section>
+    </main>
+
+    <div>
+        <button class="btn">Get Started</button>
+    </div>
 </body>
+
 </html>
