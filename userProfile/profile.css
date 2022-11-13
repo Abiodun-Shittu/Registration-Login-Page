@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+	color: #000080;
+}
+
+.profile-container {
+	display: flex;
+    justify-content: space-between;
+	height: 100vh;
+	/* align-items: center; */
+}
+
+.sidebar {
+	padding-top: 40px;
+	padding-left: 80px;
+}
+
+.home, .tasks, .new, .profile {
+	/* height: 50px; */
+	margin-top: 15px;
+	padding-left: 20px;
+	border-bottom: #008ECC 1px solid;;
+}
+
+.content {
+	flex-basis: 80%;
+	background: #008ECC;
+	padding: 40px 250px 0 250px;
+	/* max-width: 800px; */
+}
+
+.content-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-header div {
+	border: 1px solid #000080;
+	background: #ffffff;
+	width: 30%;
+	padding: 10px;
+    border-radius: 10px;
+}
+
+.content-body {
+	margin-top: 20px;
+	background-color: #ffffff;
+	background-image: url(../assets/images/Rectangle\ 31.png);
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+	padding-top: 60px;
+    border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	height: 600px;
+	/* justify-content: center; */
+}
+
+.content-body img {
+	width: 20%;
+}
+
+.user-image, .content-body p{
+	align-self: center;
+
+}
+
+.account {
+	background: #008ECC;
+	margin: 30px 0 20px 0;
+	width: 60%;
+    border-radius: 10px;
+	align-self: center;
+	padding: 10px;
+	color: #ffffff;
+}
+
+
+
+
