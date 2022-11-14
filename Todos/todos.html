@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iPlan</title>
+	<link rel="stylesheet" href="./todos.css" />
+    <link rel="shortcut icon" href="../assets/svg/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+	<script src="./todos.js" defer></script>
+</head>
+<body>
+	<section class="profile-container visible">
+		<div class="sidebar">
+			<div>
+            <img src="../assets/svg/iplanlogo.svg" alt="logo" />
+        	</div>
+			<div class="home">
+				<p>Home</p>
+			</div>
+			<div class="tasks">
+				<p>Todos</p>
+			</div>
+			<div class="new">
+				<p>Create New Todo</p>
+			</div>
+			<div class="profile">
+                <p>Profile</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				<div class="left-header">
+					<p>Home</p>
+				</div>
+				<div class="right-header">
+					<p>Hello, <span class="username">Jane Doe</span></p>
+				</div>
+			</div>
+			<div class="search">
+				<input type="search" name="search" id="search" placeholder="Search">
+			</div>
+			<div class="content-body">
+				<div class="categories">
+					<div class="category">
+						<img src="../assets/images/Vector (1).png" alt="">
+						<div>
+							<p>All</p>
+							<p>23 Tasks</p>
+						</div>
+					</div>
+					<div class="category">
+						<img src="../assets/images/Group 2.png" alt="">
+						<div>
+							<p>Work</p>
+							<p>13 Tasks</p>
+						</div>
+					</div>
+					<div class="category">
+						<img src="../assets/images/Headphone.png" alt="">
+						<div>
+							<p>Music</p>
+							<p>3 Tasks</p>
+						</div>
+					</div>
+					<div class="category">
+						<img src="../assets/images/figma logo.png" alt="">
+						<div>
+							<p>Design</p>
+							<p>1 Task</p>
+						</div>
+					</div>
+					<div class="category">
+						<img src="../assets/images/Vector.png" alt="">
+						<div>
+							<p>Travel</p>
+							<p>3 Tasks</p>
+						</div>
+					</div>
+					<div class="category">
+						<img src="../assets/images/Book.png" alt="">
+						<div>Study</p>
+							<p>11 Tasks</p>
+						</div>
+					</div>
+				</div>
+				<div class="add-btn">
+					<img src="../assets/images/PlusOutline.png" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="profile-container hidden">
+		<div class="sidebar">
+			<div>
+            <img src="../assets/svg/iplanlogo.svg" alt="logo" />
+        	</div>
+			<div class="home">
+				<p>Home</p>
+			</div>
+			<div class="tasks">
+				<p>Todos</p>
+			</div>
+			<div class="new">
+				<p>Create New Todo</p>
+			</div>
+			<div class="profile">
+                <p>Profile</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				<div class="left-header">
+					<p>Todos</p>
+				</div>
+				<div class="right-header">
+					<p>Hello, <span class="username">Jane Doe</span></p>
+				</div>
+			</div>
+			<div class="content-body">
+				<div class="all-todos">
+					<img src="../assets/images/Vector (1).png" alt="">
+					<div>
+						<p class="all">All</p>
+						<p>23 Tasks</p>
+					</div>
+				</div>
+				<div class="todos">
+					<div class="todo">
+						<div class="todo-text">
+							<p>Tomorrow</p>
+							<h3>Practice Design</h3>
+							<p>16:00</p>
+						</div>
+						<div class="todo-update">
+							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
+							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
+						</div>
+					</div>
+					<div class="todo">
+						<div class="todo-text">
+							<p>Today</p>
+							<h3>Walk Out</h3>
+							<p>16:00</p>
+						</div>
+						<div class="todo-update">
+							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
+							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
+						</div>
+					</div>
+					<div class="todo">
+						<div class="todo-text">
+							<p>Today</p>
+							<h3>Zoom Meeting</h3>
+							<p>18:30</p>
+						</div>
+						<div class="todo-update">
+							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
+							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
+						</div>
+					</div>
+					<div class="todo">
+						<div class="todo-text">
+							<p>Tomorrow</p>
+							<h3>Practice Python</h3>
+							<p>16:00</p>
+						</div>
+						<div class="todo-update">
+							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
+							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
+						</div>
+					</div>
+				<div class="add-btn">
+					<img src="../assets/images/PlusOutline.png" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Poppins, sans-serif;
+	color: #000080;
+	/* margin-bottom: 20px; */
+}
+
+.profile-container {
+	display: flex;
+	justify-content: space-between;
+	/* margin-bottom: 20px; */
+	/* height: 100vh; */
+	/* align-items: center; */
+	/* padding-bottom: 20px; */
+}
+
+.sidebar {
+	padding-top: 40px;
+	padding-left: 80px;
+}
+
+.home,
+.tasks,
+.new,
+.profile {
+	/* height: 50px; */
+	margin-top: 15px;
+	padding-left: 20px;
+	border-bottom: #008ecc 1px solid;
+}
+
+.content {
+	flex-basis: 80%;
+	background: #008ecc;
+	padding: 40px 200px 0 200px;
+	/* margin-bottom: 20px; */
+	/* max-width: 800px; */
+	padding-bottom: 20px;
+}
+
+.content-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.content-header div, #search {
+	border: 1px solid #000080;
+	background: #ffffff;
+	width: 30%;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+#search {
+	margin-top: 20px;
+	width: 70%;
+	padding: 15px;
+}
+
+.content-body {
+	/* margin-top: 10px; */
+	/* background-color: #ffffff; */
+	/* background-image: url(../assets/images/Rectangle\ 31.png); */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 60px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	/* height: 600px; */
+	/* justify-content: center; */
+	/* margin-bottom: 40px; */
+}
+
+.categories {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+}
+
+.category, .todo {
+   
+	/* margin-bottom: 20px; */
+	background: #000080;
+	border-radius: 10px;
+    padding: 20px 0 20px 20px;
+	border: 1px solid #000080;
+    color: #ffffff;
+}
+
+.add-btn {
+	border: 1px solid #000080;
+	/* color: #ffffff; */
+    background: #ffffff;
+	border-radius: 50px;
+	/* padding: 5px; */
+	/* width: 10%; */
+	align-self: flex-end;
+	margin-top: -80px;
+	margin-right: -80px;
+	/* margin-bottom: 20px; */
+}
+
+.add-btn:hover {
+    cursor: pointer;
+}
+
+.add-btn img {
+	padding: 10px;
+}
+
+
+/* .hidden {
+	display: none;
+} */
+
+.all-todos {
+	margin-bottom: 15px;
+	background: #06648d;
+	width: 20%;
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.all-todos div {
+	padding-left: 10px;
+}
+
+.all {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.todos {
+	display: flex;
+	flex-direction: column;
+	/* margin-bottom: 20px; */
+}
+
+.todo {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 20px;
+}
+
+.todo-text {
+	flex-basis: 60%;
+}
+
+.todo-update {
+	/* flex: .5; */
+	/* flex-basis: 30%; */
+	display: flex;
+	flex-direction: row;
+	/* width: 5%; */
+	justify-content: flex-end;
+	margin-right: 20px;
+	/* background: #ffffff; */
+}
+
+.todo img {
+	width: 7%;
+	height: 50%;
+	align-self: center;
+}
+
+.edit {
+	margin-right: 15px;
+}
