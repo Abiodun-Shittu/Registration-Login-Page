@@ -14,7 +14,7 @@
 	<script src="./profile.js" defer></script>
 </head>
 <body>
-	<section class="profile-container">
+	<section class="profile-container visible">
 		<div class="sidebar">
 			<div>
             <img src="../assets/svg/iplanlogo.svg" alt="logo" />
@@ -49,5 +49,46 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="profile-container hidden">
+		<div class="sidebar">
+			<div>
+            <img src="../assets/svg/iplanlogo.svg" alt="logo" />
+        	</div>
+			<div class="home">
+				<p>Home</p>
+			</div>
+			<div class="tasks">
+				<p>Tasks</p>
+			</div>
+			<div class="new">
+				<p>Search</p>
+			</div>
+			<div class="profile">
+                <p>Profile</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				<div class="left-header">
+					<p>Profile / Account</p>
+				</div>
+				<div class="right-header">
+					<p>Hello, <span class="username">Jane Doe</span></p>
+				</div>
+			</div>
+			<div class="content-body">
+				<form class="form">
+					<h3>Update your Profile</h3>
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" placeholder="Enter your name">
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email" placeholder="Enter your Email">
+					<div class="btn"><button>Save Changes</button></div>
+				</form>
+			</div>
+		</div>
+	</section>
+
 </body>
 </html>
