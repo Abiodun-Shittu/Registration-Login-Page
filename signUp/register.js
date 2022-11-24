@@ -27,10 +27,17 @@ userRegForm.addEventListener("submit", (e) => {
 		.then((data) => {
 			console.log(data);
 			if (data.message === "User Successfully Created") {
-				alert("Sign Up Successful");
-				 setTimeout(() => {
-					window.location.href = "../userProfile/profile.html";					
-					}, 2000);
+				console.log("User Successfully Created");
+				localStorage.setItem("userId", data.id);
+				localStorage.setItem("token", data.token);
+				setTimeout(() => {
+					window.location.href = "../userProfile/profile.html";
+				}, 2000);
+			} else if (data.message === "Email Already Exists") {
+				console.log("Email Already Exists");
+				setTimeout(() => {
+					window.location.href = "../login/login.html";
+				}, 2000);
 			}
 		})
 		.catch((error) => console.log(error));

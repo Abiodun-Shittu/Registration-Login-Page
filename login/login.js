@@ -24,12 +24,18 @@ userLoginForm.addEventListener("submit", (e) => {
 	})
 		.then((res) => res.json())
 		.then((data) => {
-			console.log(data)
+			console.log(data);
 			if (data.message === "success") {
-				alert("Login Successful")
-				setTimeout (() => {
+				console.log("Login Successful");
+				localStorage.setItem("userId", data.data.id)
+				localStorage.setItem("token", data.data.token);
+				setTimeout(() => {
 					window.location.href = "../userProfile/profile.html";
-				}, 2000)
+				}, 2000);
+			} else if (data.message === "Unable to retrieve user") {
+				console.log("Email or Password is incorrect");
+			} else if (data.message === "Unable to authenticate user.") {
+				console.log("Email or Password is incorrect");
 			}
 		})
 		.catch((err) => console.log(err));
