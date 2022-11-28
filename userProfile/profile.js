@@ -1,4 +1,10 @@
 const updateProfile = document.querySelector(".account");
+const deleteProfile = document.querySelector(".delete");
+const visible = document.querySelector(".visible");
+const hidden = document.querySelector(".hidden");
+const hiddenForm = document.querySelector(".hidden-form");
+const acceptDelete = document.querySelector(".yes");
+const declineDelete = document.querySelector(".no");
 const username = document.querySelector("#username");
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
@@ -58,4 +64,41 @@ updateProfile.addEventListener("click", () => {
 	setTimeout(() => {
 		window.location.href = "../updateProfile/updateProfile.html";
 	}, 1500);
+});
+
+deleteProfile.addEventListener("click", () => {
+	setTimeout(() => {
+		visible.classList.add("hidden");
+		hidden.classList.remove("hidden");
+	}, 1000);
+});
+
+acceptDelete.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	// DELETE User Profile
+	setTimeout(() => {
+		fetch(url + userId, {
+			method: "DELETE",
+			headers: { Authorization: `Bearer ${token}` },
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				if (data.message === "Unauthorized") {
+					window.location.href = "../login/login.html";
+				} else if (data.message === "User successfully deleted") {
+					console.log("User deleted successfully");
+					window.location.href = "../index.html";
+				}
+			})
+			.catch((err) => console.log(err));
+	}, 2000);
+});
+
+declineDelete.addEventListener("click", () => {
+	setTimeout(() => {
+		hidden.classList.add("hidden");
+		visible.classList.remove("hidden");
+	}, 1000);
 });
