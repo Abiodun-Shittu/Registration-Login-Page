@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iPlan</title>
+	<link rel="stylesheet" href="./updateProfile.css" />
+    <link rel="shortcut icon" href="../assets/svg/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+	<script src="./updateProfile.js" defer></script>
+</head>
+<body>
+	<section class="profile-container">
+			<div class="sidebar">
+				<div>
+				<img src="../assets/svg/iplanlogo.svg" alt="logo" />
+				</div>
+				<div class="home">
+					<p>Home</p>
+				</div>
+				<div class="tasks">
+					<p>Tasks</p>
+				</div>
+				<div class="new">
+					<p>Search</p>
+				</div>
+				<div class="profile">
+					<p>Profile</p>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content-header">
+					<div class="left-header">
+						<p>Profile / Account</p>
+					</div>
+					<div class="right-header">
+						<p>Hello, <span id="username"></span></p>
+					</div>
+				</div>
+				<div class="content-body">
+					<form class="form">
+						<h3>Update your Profile</h3>
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" placeholder="Enter your name">
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" placeholder="Enter your Email">
+						<div class="btn"><button>Save Changes</button></div>
+					</form>
+				</div>
+			</div>
+		</section>
+	
+</body>
+</html>

@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iPlan</title>
     <link rel="stylesheet" href="./login.css" />
-    <link rel="shortcut icon" href="../assets/svg/favicon.svg" type="image/x-icon" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-</head>
+    <link
+      rel="shortcut icon"
+      href="../assets/svg/favicon.svg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./login.js" defer></script>
+  </head>
 
-<body>
-	<div class="wrapper">
-		<div class="left">
-            <img src="../assets/svg/iplanlogo.svg" alt="logo" />
-			<p class="create">Welcome Back!</p>
-			<label for="Email">Email</label>
-			<input type="email" name="email" placeholder="Enter Email Address">
-			<label for="Password">Password</label>
-			<input type="password" name="password" placeholder="Enter Password">
-			<div>
-        <button class="btn">Login</button>
-    </div>
-	<p class="or">Or</p>
-	<P class="alt">Don't have an account yet? <a href="/signUp/register.html">Register</a></P>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+        <div class="image-container">
+          <img src="../assets/svg/iplanlogo.svg" alt="logo" />
         </div>
-		<div class="right">
-			<h1>With iPlan You Are Good To Go For The Day!</h1>
-            <p>Here we help you prioritize, organize and keep track of your daily activities.
-                Feel organized and focused about your day with iPlan!
-            </p>
-		</div>
-	</div>
-</body>
 
+        <h2 class="create">Welcome Back!</h2>
+
+        <form class="form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Email Address"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+            />
+          </div>
+          <div class="btn-submit">
+            <button class="btn">Login</button>
+          </div>
+        </form>
+        <div></div>
+        <p class="alt">
+          Don't have an account yet?
+          <a href="/signUp/register.html">Register</a>
+        </p>
+      </div>
+      <div class="right">
+        <h1>With iPlan You Are Good To Go For The Day!</h1>
+        <p>
+          Here we help you prioritize, organize and keep track of your daily
+          activities. <br />
+          Feel organized and focused about your day with iPlan!
+        </p>
+      </div>
+    </div>
+    <div id="pop">Login Successful</div>
+  </body>
 </html>
