@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iPlan</title>
+	<link rel="stylesheet" href="./todos.css" />
+    <link rel="shortcut icon" href="../assets/svg/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+	<script src="./todos.js" defer></script>
+</head>
+<body>
+
+	<section class="profile-container">
+		<div class="sidebar">
+			<div>
+            <img src="../assets/svg/iplanlogo.svg" alt="logo" />
+        	</div>
+			<div class="home">
+				<p>Home</p>
+			</div>
+			<div class="tasks">
+				<p>Todos</p>
+			</div>
+			<div class="new">
+				<p>Create New Todo</p>
+			</div>
+			<div class="profile">
+                <p>Profile</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="content-header">
+				<div class="left-header">
+					<p>Todos</p>
+				</div>
+				<div class="right-header">
+					<p>Hello, <span class="username">Jane Doe</span></p>
+				</div>
+			</div>
+			<div class="content-body visible">
+				<div class="all-todos">
+					<img src="../assets/images/Vector (1).png" alt="">
+					<div>
+						<p class="all">All</p>
+						<small class="todo-num"></small>
+					</div>
+				</div>
+				<div class="todos">
+					
+					</div>
+				<div class="add-btn">
+					<img src="../assets/images/PlusOutline.png" alt="">
+				</div>
+			</div>
+
+			<div class="content-body hidden">
+				<h3>Update your Todo</h3>
+				<form class="form">
+					<label for="title">Title</label>
+					<input type="text" name="title" id="title" placeholder="Add Title">
+					<label for="description">Description</label>
+					<textarea name="description" id="description" cols="30" rows="10" placeholder="Add Description"></textarea>
+					<label for="date">Due Date</label>
+					<input type="datetime-local" name="date" id="date" placeholder="Due Date">
+					<button class="btn">Update Todo</button>
+				</form>
+			</div>	
+
+		</div>
+	</section>
+</body>
+</html>
