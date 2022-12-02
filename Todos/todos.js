@@ -12,7 +12,6 @@ let output = "";
 
 const url = "http://localhost:8000/api/v0/todos/";
 const token = localStorage.getItem("token");
-const userId = localStorage.getItem("userId");
 
 const renderTodos = (todos) => {
 	todos.forEach((todo) => {
@@ -21,10 +20,7 @@ const renderTodos = (todos) => {
 				<div class="todo-text">
 					<h3 class="title">${todo.title}</h3>
 					<p class="description">${todo.description}</p>
-					<p class="due_date">${todo.due_date.slice(0, 10)} ${todo.due_date.slice(
-			11,
-			16
-		)}</p>
+					<p class="due_date">${todo.due_date.slice(0, 10)} ${todo.due_date.slice(11,16)}</p>
 				</div>
 				<div class="todo-update" data-id=${todo.todo_id}>
 					<img id="edit" src="../assets/images/edit-icon.png" alt="Edit">
@@ -39,7 +35,7 @@ const renderTodos = (todos) => {
 fetch(url, {
 	method: "GET",
 	headers: {
-		Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NmFlZmEzLTNjNmItNDkyYy1hYzE1LWQyYmQzNGMxOGUxOSIsImVtYWlsIjoiamVycnl3aXprbGF5MUBnbWFpbC5jb20iLCJpYXQiOjE2Njk5MTYyNDMsImV4cCI6MTY3MDAwMjY0M30.ODlvpb7bs9vxZoYqEzcZHKABbDOYTwuo_wquxXQIO9s`,
+		Authorization: `Bearer ${token}`,
 	},
 })
 	.then((res) => res.json())
@@ -63,7 +59,7 @@ todoList.addEventListener("click", (e) => {
 		fetch(url + todoId, {
 			method: "DELETE",
 			headers: {
-				Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NmFlZmEzLTNjNmItNDkyYy1hYzE1LWQyYmQzNGMxOGUxOSIsImVtYWlsIjoiamVycnl3aXprbGF5MUBnbWFpbC5jb20iLCJpYXQiOjE2Njk5MTYyNDMsImV4cCI6MTY3MDAwMjY0M30.ODlvpb7bs9vxZoYqEzcZHKABbDOYTwuo_wquxXQIO9s`,
+				Authorization: `Bearer ${token}`,
 			},
 		})
 			.then((res) => res.json())
@@ -99,20 +95,21 @@ todoList.addEventListener("click", (e) => {
 	updateButton.addEventListener("click", (e) => {
 		e.preventDefault();
 
+		// Update todos 
 		fetch(url + todoId, {
 			method: "PATCH",
 			headers: {
-				Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU4NmFlZmEzLTNjNmItNDkyYy1hYzE1LWQyYmQzNGMxOGUxOSIsImVtYWlsIjoiamVycnl3aXprbGF5MUBnbWFpbC5jb20iLCJpYXQiOjE2Njk5MTYyNDMsImV4cCI6MTY3MDAwMjY0M30.ODlvpb7bs9vxZoYqEzcZHKABbDOYTwuo_wquxXQIO9s`,
+				Authorization: `Bearer ${token}`,
 			},
-			body: {
-				"title": "backend Task",
-				"description": "To Build a CRUD API",
-				"dueDate": "22-10-2022",
-			},
+			body: JSON.stringify({
+				title: titleInput.value,
+                description: descriptionInput.value,
+				due_date: dueDateInput.value,
+			})
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
+				console.log(body);
 				if (data.message === "Unauthorized") {
 					window.location.href = "../login/login.html";
 				} else if (data.message === "Todo Successfully Updated") {
