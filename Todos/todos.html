@@ -42,7 +42,7 @@
 					<p>Hello, <span class="username">Jane Doe</span></p>
 				</div>
 			</div>
-			<div class="content-body">
+			<div class="content-body visible">
 				<div class="all-todos">
 					<img src="../assets/images/Vector (1).png" alt="">
 					<div>
@@ -51,54 +51,26 @@
 					</div>
 				</div>
 				<div class="todos">
-					<!-- <div class="todo">
-						<div class="todo-text">
-							<p>Tomorrow</p>
-							<h3>Practice Design</h3>
-							<p>16:00</p>
-						</div>
-						<div class="todo-update">
-							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
-							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
-						</div>
-					</div>
-					<div class="todo">
-						<div class="todo-text">
-							<p>Today</p>
-							<h3>Walk Out</h3>
-							<p>16:00</p>
-						</div>
-						<div class="todo-update">
-							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
-							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
-						</div>
-					</div>
-					<div class="todo">
-						<div class="todo-text">
-							<p>Today</p>
-							<h3>Zoom Meeting</h3>
-							<p>18:30</p>
-						</div>
-						<div class="todo-update">
-							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
-							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
-						</div>
-					</div>
-					<div class="todo">
-						<div class="todo-text">
-							<p>Tomorrow</p>
-							<h3>Practice Python</h3>
-							<p>16:00</p>
-						</div>
-						<div class="todo-update">
-							<img class="edit" src="../assets/images/edit-icon.png" alt="Edit">
-							<img class="delete" src="../assets/images/delete-icon.png" alt="Delete">
-						</div> -->
+					
 					</div>
 				<div class="add-btn">
 					<img src="../assets/images/PlusOutline.png" alt="">
 				</div>
 			</div>
+
+			<div class="content-body hidden">
+				<h3>Update your Todo</h3>
+				<form class="form">
+					<label for="title">Title</label>
+					<input type="text" name="title" id="title" placeholder="Add Title">
+					<label for="description">Description</label>
+					<textarea name="description" id="description" cols="30" rows="10" placeholder="Add Description"></textarea>
+					<label for="date">Due Date</label>
+					<input type="datetime-local" name="date" id="date" placeholder="Due Date">
+					<button class="btn">Update Todo</button>
+				</form>
+			</div>	
+
 		</div>
 	</section>
 </body>
