@@ -2,6 +2,7 @@ const createTodoForm = document.querySelector(".form");
 const titleInput = document.getElementById("title");
 const descriptionInput = document.getElementById("description");
 const dateInput = document.getElementById("date");
+const navPages = document.querySelector(".sidebar");
 
 const url = "http://localhost:8000/api/v0/todos";
 let token = localStorage.getItem("token");
@@ -47,5 +48,27 @@ createTodoForm.addEventListener("submit", (e) => {
 			descriptionInput.value = "";
 			dateInput.value = "";
 
+	}, 1500);
+});
+
+navPages.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	const todosPage = e.target.id === "todos-page";
+	const createTodoPage = e.target.id === "new-todo-page";
+	const profilePage = e.target.id == "profile-page";
+
+	setTimeout(() => {
+		if (todosPage) {
+			window.location.href = "../todos/todos.html";
+		}
+
+		if (createTodoPage) {
+			window.location.href = "../createTodo/todo.html";
+		}
+
+		if (profilePage) {
+			window.location.href = "../userProfile/profile.html";
+		}
 	}, 1500);
 });

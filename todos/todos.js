@@ -8,6 +8,8 @@ const titleInput = document.getElementById("title");
 const descriptionInput = document.getElementById("description");
 const dueDateInput = document.getElementById("date");
 const updateButton = document.querySelector(".btn");
+const navPages = document.querySelector(".sidebar");
+
 let output = "";
 
 const url = "http://localhost:8000/api/v0/todos/";
@@ -20,7 +22,10 @@ const renderTodos = (todos) => {
 				<div class="todo-text">
 					<h3 class="title">${todo.title}</h3>
 					<p class="description">${todo.description}</p>
-					<p class="due_date">${todo.due_date.slice(0, 10)} ${todo.due_date.slice(11,16)}</p>
+					<p class="due_date">${todo.due_date.slice(0, 10)} ${todo.due_date.slice(
+			11,
+			16
+		)}</p>
 				</div>
 				<div class="todo-update" data-id=${todo.todo_id}>
 					<img id="edit" src="../assets/images/edit-icon.png" alt="Edit">
@@ -95,7 +100,7 @@ todoList.addEventListener("click", (e) => {
 	updateButton.addEventListener("click", (e) => {
 		e.preventDefault();
 
-		// Update todos 
+		// Update todos
 		fetch(url + todoId, {
 			method: "PATCH",
 			headers: {
@@ -103,9 +108,9 @@ todoList.addEventListener("click", (e) => {
 			},
 			body: JSON.stringify({
 				title: titleInput.value,
-                description: descriptionInput.value,
+				description: descriptionInput.value,
 				due_date: dueDateInput.value,
-			})
+			}),
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -117,4 +122,26 @@ todoList.addEventListener("click", (e) => {
 				}
 			});
 	});
+});
+
+navPages.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	const todosPage = e.target.id === "todos-page";
+	const createTodoPage = e.target.id === "new-todo-page";
+	const profilePage = e.target.id == "profile-page";
+
+	setTimeout(() => {
+		if (todosPage) {
+			window.location.href = "../todos/todos.html";
+		}
+
+		if (createTodoPage) {
+			window.location.href = "../createTodo/todo.html";
+		}
+
+		if (profilePage) {
+			window.location.href = "../userProfile/profile.html";
+		}
+	}, 1500);
 });

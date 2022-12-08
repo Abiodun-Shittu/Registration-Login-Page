@@ -9,6 +9,7 @@ const username = document.querySelector("#username");
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const todos = document.querySelector("#todos");
+const navPages = document.querySelector(".sidebar");
 
 const url = "http://localhost:8000/api/v0/users/";
 
@@ -101,4 +102,26 @@ declineDelete.addEventListener("click", () => {
 		hidden.classList.add("hidden");
 		visible.classList.remove("hidden");
 	}, 1000);
+});
+
+navPages.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	const todosPage = e.target.id === "todos-page";
+	const createTodoPage = e.target.id === "new-todo-page";
+	const profilePage = e.target.id == "profile-page";
+
+	setTimeout(() => {
+		if (todosPage) {
+			window.location.href = "../todos/todos.html";
+		}
+
+		if (createTodoPage) {
+			window.location.href = "../createTodo/todo.html";
+		}
+
+		if (profilePage) {
+			window.location.href = "../userProfile/profile.html";
+		}
+	}, 1500);
 });

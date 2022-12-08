@@ -20,12 +20,18 @@ body {
 }
 
 .home,
-.tasks,
-.new,
+.todo-list,
+.new-todo,
 .profile {
 	margin-top: 15px;
 	padding-left: 20px;
 	border-bottom: #008ecc 1px solid;
+}
+
+#todos-page,
+#new-todo-page,
+#profile-page {
+	cursor: pointer;
 }
 
 .content {
@@ -157,10 +163,10 @@ small {
 	margin-right: 15px;
 }
 
-#edit, #delete {
+#edit,
+#delete {
 	cursor: pointer;
 }
-
 
 .form {
 	display: flex;
@@ -174,12 +180,14 @@ h3 {
 
 .form label {
 	font-weight: bold;
-    font-size: 1.2em;
+	font-size: 1.2em;
 	margin-bottom: -10px;
 	margin-left: 15px;
 }
 
-.form input, textarea, button {
+.form input,
+textarea,
+button {
 	margin-top: 10px;
 	margin-bottom: 20px;
 	border-radius: 10px;
@@ -187,7 +195,8 @@ h3 {
 	padding: 12px;
 }
 
-input[type="text"]::placeholder, textarea::placeholder {
+input[type="text"]::placeholder,
+textarea::placeholder {
 	color: #000080;
 }
 
@@ -204,7 +213,7 @@ input[type="text"]::placeholder, textarea::placeholder {
 }
 
 .btn:hover {
-    background: #000089;
+	background: #000089;
 	cursor: pointer;
 }
 

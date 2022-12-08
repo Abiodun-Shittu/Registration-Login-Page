@@ -31,7 +31,7 @@ userRegForm.addEventListener("submit", (e) => {
 				localStorage.setItem("userId", data.id);
 				localStorage.setItem("token", data.token);
 				setTimeout(() => {
-					window.location.href = "../userProfile/profile.html";
+					window.location.href = "../todos/todos.html";
 				}, 2000);
 			} else if (data.message === "Email Already Exists") {
 				console.log("Email Already Exists");

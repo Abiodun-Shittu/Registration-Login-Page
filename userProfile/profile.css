@@ -21,12 +21,18 @@ body {
 }
 
 .home,
-.tasks,
-.new,
+.todo-list,
+.new-todo,
 .profile {
 	margin-top: 15px;
 	padding-left: 20px;
 	border-bottom: #008ecc 1px solid;
+}
+
+#todos-page,
+#new-todo-page,
+#profile-page {
+	cursor: pointer;
 }
 
 .content {

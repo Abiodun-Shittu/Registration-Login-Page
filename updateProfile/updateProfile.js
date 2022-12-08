@@ -2,6 +2,7 @@ const username = document.querySelector("#username");
 const updateUserForm = document.querySelector(".form");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
+const navPages = document.querySelector(".sidebar");
 
 const url = "http://localhost:8000/api/v0/users/";
 
@@ -59,3 +60,25 @@ window.onload = () => {
 		}, 1000);
 	});
 };
+
+navPages.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	const todosPage = e.target.id === "todos-page";
+	const createTodoPage = e.target.id === "new-todo-page";
+	const profilePage = e.target.id == "profile-page";
+
+	setTimeout(() => {
+		if (todosPage) {
+			window.location.href = "../todos/todos.html";
+		}
+
+		if (createTodoPage) {
+			window.location.href = "../createTodo/todo.html";
+		}
+
+		if (profilePage) {
+			window.location.href = "../userProfile/profile.html";
+		}
+	}, 1500);
+});
