@@ -3,17 +3,32 @@ const titleInput = document.getElementById("title");
 const descriptionInput = document.getElementById("description");
 const dateInput = document.getElementById("date");
 const navPages = document.querySelector(".sidebar");
+const username = document.querySelector(".username");
 
 const url = "http://localhost:8000/api/v0/todos";
 let token = localStorage.getItem("token");
+const userId = localStorage.getItem("userId");
 
 window.onload = setTimeout(() => {
 	if (!token) {
-		window.location.href = "../login/login.html"
+		window.location.href = "../login/login.html";
 	}
-	titleInput.focus()
-}, 1500);
+	// GET user information
+	fetch("http://localhost:8000/api/v0/users/" + userId, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+	})
+		.then((res) => res.json())
+		.then((data) => {
+			console.log(data);
+			username.innerHTML = data.data.name.split(" ")[0];
+		})
+		.catch((error) => console.log(error));
 
+	titleInput.focus();
+}, 1500);
 
 createTodoForm.addEventListener("submit", (e) => {
 	e.preventDefault();
@@ -24,7 +39,7 @@ createTodoForm.addEventListener("submit", (e) => {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
-				"Authorization": `Bearer ${token}`
+				Authorization: `Bearer ${token}`,
 			},
 			body: JSON.stringify({
 				title: titleInput.value,
@@ -44,10 +59,9 @@ createTodoForm.addEventListener("submit", (e) => {
 			})
 			.catch((err) => console.log(err));
 
-			titleInput.value = "";
-			descriptionInput.value = "";
-			dateInput.value = "";
-
+		titleInput.value = "";
+		descriptionInput.value = "";
+		dateInput.value = "";
 	}, 1500);
 });
 
