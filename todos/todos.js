@@ -9,6 +9,7 @@ const descriptionInput = document.getElementById("description");
 const dueDateInput = document.getElementById("date");
 const updateButton = document.querySelector(".btn");
 const navPages = document.querySelector(".sidebar");
+const addButton = document.querySelector(".add-btn");
 
 let output = "";
 
@@ -109,12 +110,11 @@ todoList.addEventListener("click", (e) => {
 			body: JSON.stringify({
 				title: titleInput.value,
 				description: descriptionInput.value,
-				due_date: dueDateInput.value,
+				dueDate: dueDateInput.value,
 			}),
 		})
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(body);
 				if (data.message === "Unauthorized") {
 					window.location.href = "../login/login.html";
 				} else if (data.message === "Todo Successfully Updated") {
@@ -143,5 +143,13 @@ navPages.addEventListener("click", (e) => {
 		if (profilePage) {
 			window.location.href = "../userProfile/profile.html";
 		}
+	}, 1500);
+});
+
+addButton.addEventListener("click", (e) => {
+	e.preventDefault();
+
+	setTimeout(() => {
+		window.location.href = "../createTodo/todo.html";
 	}, 1500);
 });

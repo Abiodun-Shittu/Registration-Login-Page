@@ -12,11 +12,10 @@ const todos = document.querySelector("#todos");
 const navPages = document.querySelector(".sidebar");
 
 const url = "http://localhost:8000/api/v0/users/";
-
 const userId = localStorage.getItem("userId");
-let token;
+const token = localStorage.getItem("token");
+
 window.onload = () => {
-	token = localStorage.getItem("token");
 	if (!token) {
 		window.location.href = "../login/login.html";
 	}

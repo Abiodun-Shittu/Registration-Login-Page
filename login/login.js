@@ -1,7 +1,8 @@
 const userLoginForm = document.querySelector(".form");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
-const pop = document.getElementById("pop");
+const submitButton = document.querySelector(".btn");
+
 
 const url = "http://localhost:8000/api/v0/users/login";
 
@@ -26,16 +27,18 @@ userLoginForm.addEventListener("submit", (e) => {
 		.then((data) => {
 			console.log(data);
 			if (data.message === "success") {
-				console.log("Login Successful");
+				submitButton.innerHTML = "Logging in...";
 				localStorage.setItem("userId", data.data.id)
 				localStorage.setItem("token", data.data.token);
 				setTimeout(() => {
 					window.location.href = "../todos/todos.html";
 				}, 2000);
 			} else if (data.message === "Unable to retrieve user") {
-				console.log("Email or Password is incorrect");
+				alert("Email or Password is incorrect");
 			} else if (data.message === "Unable to authenticate user.") {
-				console.log("Email or Password is incorrect");
+				alert("Email or Password is incorrect");
+			} else if (data.message === "Unprocessable data") {
+				alert("All field are required")
 			}
 		})
 		.catch((err) => console.log(err));

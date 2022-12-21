@@ -6,7 +6,7 @@ const navPages = document.querySelector(".sidebar");
 const username = document.querySelector(".username");
 
 const url = "http://localhost:8000/api/v0/todos";
-let token = localStorage.getItem("token");
+const token = localStorage.getItem("token");
 const userId = localStorage.getItem("userId");
 
 window.onload = setTimeout(() => {
@@ -53,8 +53,9 @@ createTodoForm.addEventListener("submit", (e) => {
 				if (data.message === "Unauthorized") {
 					window.location.href = "../login/login.html";
 				} else if (data.message === "Todo Successfully Created") {
-					console.log("todo successfully created");
+					alert("todo successfully created");
 					localStorage.setItem("todoId", data.todoId);
+					window.location.href = "../todos/todos.html"
 				}
 			})
 			.catch((err) => console.log(err));

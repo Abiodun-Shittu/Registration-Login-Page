@@ -5,11 +5,10 @@ const emailInput = document.getElementById("email");
 const navPages = document.querySelector(".sidebar");
 
 const url = "http://localhost:8000/api/v0/users/";
-
 const userId = localStorage.getItem("userId");
-let token;
+const token = localStorage.getItem("token");
+
 window.onload = () => {
-	token = localStorage.getItem("token");
 	if (!token) {
 		window.location.href = "../login/login.html";
 	}
@@ -35,7 +34,6 @@ window.onload = () => {
 
 		// Update User information
 		setTimeout(() => {
-			const url = "http://localhost:8000/api/v0/users/";
 			fetch(url + userId, {
 				method: "PATCH",
 				headers: {

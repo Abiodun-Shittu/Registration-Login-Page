@@ -2,6 +2,7 @@ const userRegForm = document.querySelector(".form");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
+const submitButton = document.querySelector(".btn");
 
 const url = "http://localhost:8000/api/v0/users";
 
@@ -25,19 +26,18 @@ userRegForm.addEventListener("submit", (e) => {
 	})
 		.then((res) => res.json())
 		.then((data) => {
-			console.log(data);
+			console.log(data.message);
 			if (data.message === "User Successfully Created") {
-				console.log("User Successfully Created");
+				submitButton.innerHTML = "Creating your account...";
 				localStorage.setItem("userId", data.id);
 				localStorage.setItem("token", data.token);
 				setTimeout(() => {
 					window.location.href = "../todos/todos.html";
 				}, 2000);
 			} else if (data.message === "Email Already Exists") {
-				console.log("Email Already Exists");
-				setTimeout(() => {
-					window.location.href = "../login/login.html";
-				}, 2000);
+				alert("Email Already Exists")
+			} else if (data.message === "Unprocessable data") {
+				alert("All field are required")
 			}
 		})
 		.catch((error) => console.log(error));
