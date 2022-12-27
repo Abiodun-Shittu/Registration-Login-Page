@@ -106,21 +106,25 @@ todoList.addEventListener("click", (e) => {
 			method: "PATCH",
 			headers: {
 				Authorization: `Bearer ${token}`,
+				"Content-Type": "application/json",
 			},
 			body: JSON.stringify({
 				title: titleInput.value,
 				description: descriptionInput.value,
-				dueDate: dueDateInput.value,
+				due_date: dueDateInput.value,
 			}),
 		})
 			.then((res) => res.json())
 			.then((data) => {
+				console.log(data);
 				if (data.message === "Unauthorized") {
 					window.location.href = "../login/login.html";
 				} else if (data.message === "Todo Successfully Updated") {
-					console.log("Todo updated successfully");
+					alert("Todo updated successfully");
+					window.location.reload();
 				}
-			});
+			})
+			.catch((err) => console.log(err));
 	});
 });
 
